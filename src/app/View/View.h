@@ -6,11 +6,19 @@
 #include "Led.h"
 #include <wiringPi.h>
 
-enum{LIGHT_OFF, LIGHT_ON};
+enum
+{
+    LIGHT_OFF,
+    LIGHT_ON_1,
+    LIGHT_ON_2,
+    LIGHT_ON_3,
+    LIGHT_ON_4,
+    LIGHT_ON_5
+};
 
 class View
 {
-    
+
 private:
     int lightState;
     Led *light;
@@ -20,8 +28,9 @@ public:
     virtual ~View();
     void UpdateState(std::string strState);
     void LightView();
-    void LightOn();
-    void LightOff();
+    // void LightOn();
+    void LightOn(int cnt);
+    void LightOff(int cnt);
 };
 
 #endif

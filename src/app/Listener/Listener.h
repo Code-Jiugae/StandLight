@@ -11,6 +11,7 @@ class Listener
 private:
     Button *powerButton;
     Controller *controller;
+    int cnt = 0;
 public:
     Listener(Button *button, Controller *control);
     ~Listener();

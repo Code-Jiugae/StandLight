@@ -9,14 +9,15 @@ private:
     int pinNumber;
     bool ledState;
 
-    void writePin(bool pinState);
+    void writePin(int pinCnt, bool pinState);
 
 public:
-    Led(int pin);
+    Led(int pin, int cnt);
     virtual ~Led();
-    void On();
-    void Off();
-    void Toggle();
+    void InitLed(int cnt);
+    void On(int pinCnt);
+    void Off(int pinCnt);
+    void Toggle(int pinCnt);
 };
 
 #endif /* __LED_H__ */
