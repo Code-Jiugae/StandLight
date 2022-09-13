@@ -1,8 +1,8 @@
 #include "Controller.h"
 
-Controller::Controller(Led *Led)
+Controller::Controller(View *viewer)
 {
-    light = Led; //이름을 light로 하겠다.
+    view = viewer; //이름을 light로 하겠다.
     lightState = LIGHT_OFF;//초기화
 
 }
@@ -19,13 +19,13 @@ Controller::~Controller()
     case LIGHT_OFF:
         if(strBtn == "powerButton"){
             lightState = LIGHT_ON;
-            light->On();
+            view->UpdateState("StateOn");
         }
         break;
     case LIGHT_ON:
         if(strBtn == "powerButton"){
             lightState = LIGHT_OFF;
-            light->Off();
+            view->UpdateState("StateOff");
         }
          break;
     

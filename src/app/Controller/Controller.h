@@ -2,19 +2,17 @@
 #define CONTROLLER_H
 
 #pragma once
-#include <iostream>
-#include "Led.h"
-
-enum{LIGHT_OFF, LIGHT_ON};
+#include <string>
+#include "View.h"
 
 class Controller
 {
 private:
     int lightState;
-    Led *light;
+    View *view;
 
 public:
-    Controller(Led *led);
+    Controller(View *viewer);
     virtual ~Controller();
     void updateEvent(std::string strBtn);
 };
