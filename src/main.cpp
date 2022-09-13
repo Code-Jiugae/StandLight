@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Led.h"
 #include "Listener.h"
 #include <wiringPi.h>
 
@@ -9,7 +10,8 @@ int main()
     cout << "hello world" << endl;
     Button button1(27);
     Led led1(25);
-    Listener listener(&button1, &led1);
+    Controller control(&led1);
+    Listener listener(&button1, &control);
 
     while (1)
     {

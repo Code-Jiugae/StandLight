@@ -5,11 +5,13 @@ project(StandLight)
 add_executable(${PROJECT_NAME} 
     ./src/main.cpp
     ./src/app/Listener/Listener.cpp
+    ./src/app/Controller/Controller.cpp
     ./src/hw/Button/Button.cpp
     ./src/hw/Led/Led.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
+    ./src/app/Controller
     ./src/app/Listener
     ./src/hw/Button
     ./src/hw/Led
